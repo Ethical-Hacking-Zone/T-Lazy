@@ -53,7 +53,7 @@ def msf():
 		print_status('Android 6 or below detected...')
 		print_status('Downloading metasploit installation script...')
 		u=requests.get('https://raw.githubusercontent.com/gushmazuko/metasploit_in_termux/master/metasploit.sh')
-		with open('metasploittlz.sh','wb') as f:
+		with open('metasploittlz.sh','w') as f:
 			f.write(str(u.content.decode()))
 		os.chmod('metasploittlz.sh',stat.S_IEXEC)
 		subprocess.call('bash metasploittlz.sh',shell=True)
