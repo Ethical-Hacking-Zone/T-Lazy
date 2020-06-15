@@ -51,7 +51,7 @@ def msf():
 	a = subprocess.getoutput('neofetch | grep Android').split(' ')[2].split('.')[0]
 	if int(a) <= 6:
 		print_status('Android 6 or below detected...')
-		print_status('Downloading metasploit_5.0.65-1_all.deb...')
+		print_status('Downloading metasploit installation script...')
 		u=requests.get('https://raw.githubusercontent.com/gushmazuko/metasploit_in_termux/master/metasploit.sh')
 		with open('metasploittlz.sh','wb') as f:
 			f.write(str(u.content.decode()))
