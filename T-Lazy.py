@@ -110,7 +110,7 @@ def apkmod():
 		r = requests.get('https://raw.githubusercontent.com/Hax4us/Apkmod/master/setup.sh').content.decode()
 		f.write(str(r))
 	os.chmod('apkmod_setup.sh',stat.S_IRWXU)
-	print_status('Exitting tool... Run the apkmod_setup.sh manually')
+	print_status('\nDownloaded apkmod_setup.sh... Move it to home directory and do "sh apkmod_setup.sh".\nExitting tool...')
 	exit()
 
 def menu():
