@@ -50,6 +50,8 @@ def msf():
 
 	a = subprocess.getoutput('neofetch | grep Android').split(' ')[2].split('.')[0]
 	if int(a) <= 6:
+		print_status('Installing dependencies')
+		subprocess.call('sh install.sh msf',shell=True)
 		print_status('Downloading metasploit_5.0.65-1_all.deb...')
 		u=requests.get('https://github.com/termux/termux-packages/files/3995119/metasploit_5.0.65-1_all.deb.gz')
 		with open('metasploit_5.0.65-1_all.deb','wb') as m:
