@@ -8,5 +8,5 @@ then
 	msf_6
 else
 	pkg install -y neofetch python
-	pip3 install requests
+	python3 -m pip install requests
 fi
