@@ -1,7 +1,7 @@
 
 # <----- Coded by R37r0.Gh057 ----->
 
-import subprocess,requests,os, stat
+import subprocess,requests,os, stat, gzip
 from zipfile import ZipFile
 
 
