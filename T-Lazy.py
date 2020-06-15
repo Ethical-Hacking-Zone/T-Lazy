@@ -55,7 +55,7 @@ def msf():
 		u=requests.get('https://raw.githubusercontent.com/gushmazuko/metasploit_in_termux/master/metasploit.sh')
 		with open('metasploittlz.sh','w') as f:
 			f.write(str(u.content.decode()))
-		os.chmod('metasploittlz.sh',stat.S_IEXEC)
+		os.chmod('metasploittlz.sh',stat.S_IRWXU)
 		subprocess.call('bash metasploittlz.sh',shell=True)
 		if os.path.isfile('/data/data/com.termux/files/usr/bin/msfconsole'):
 			print_status('Metasploit Framework installed.')
