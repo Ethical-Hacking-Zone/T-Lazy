@@ -5,7 +5,7 @@ A script for all the Termux script-kiddies out there.
 
 `git clone https://github.com/Ethical-Hacking-Zone/T-Lazy.git`
 
-`cd T-Lazy && chmod +x install.sh && install.sh`
+`cd T-Lazy && chmod +x install.sh && ./install.sh`
 
 ## Running Instructions:
 
