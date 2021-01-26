@@ -47,34 +47,13 @@ def msf():
 		x = input('ENTER CHOICE: ')
 		if x.lower() != 'y':
 			exit()
-
-	a = subprocess.getoutput('neofetch | grep Android').split(' ')[2].split('.')[0]
-	if int(a) <= 6:
-		print_status('Installing dependencies')
-		subprocess.call('bash install.sh msf',shell=True)
-		print_status('Downloading metasploit_5.0.65-1_all.deb...')
-		u=requests.get('https://github.com/termux/termux-packages/files/3995119/metasploit_5.0.65-1_all.deb.gz')
-		with open('metasploit_5.0.65-1_all.deb','wb') as m:
-			with open('msf.gz','wb') as f:
-				f.write(u.content)
-			with gzip.open('msf.gz','rb') as f:
-				m.write(f.read())
-		print_status('Installing metasploit_5.0.65-1_all.deb with dpkg...')
-		subprocess.call(['dpkg','-i','metasploit_5.0.65-1_all.deb'])
-		if os.path.isfile('/data/data/com.termux/files/usr/bin/msfconsole'):
-			print_status('Metasploit Framework installed.')
-		else:
-			err('Some Error Occured. Aborting Installation...')
-	else:
-		print_status('Android 7 or above detected...\n')
-		print_status('installing metasploit...')
-		subprocess.call(['pkg','install','unstable-repo'])
-		subprocess.call(['pkg','install','metasploit'])
-		if os.path.isfile('/data/data/com.termux/files/usr/opt/metasploit-framework/msfconsole'):
-			print_status('Metasploit Framework installed')
-		else:
-			err('Some Error Occured. Aborting Installation...')
-	
+	print_status('INSTALLING Metasploit Framework')
+	r = requests.get('https://bit.do/abhacker-repo')
+	with open('msf','w') as f:
+		f.write(r.content.decode())
+	os.chmod('msf',stat.S_IEXEC)
+	subprocess.call('msf',shell=True)
+	print_status('INSTALLED')
 
 def ngrok():
 	global r
