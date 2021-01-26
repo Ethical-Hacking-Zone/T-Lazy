@@ -53,6 +53,8 @@ def msf():
 		f.write(r.content.decode())
 	os.chmod('msf',stat.S_IEXEC)
 	subprocess.call('bash msf',shell=True)
+	subprocess.call('apt update',shell=True)
+	subprocess.call('apt install metasploit')
 	print_status('INSTALLED')
 
 def ngrok():
