@@ -52,7 +52,7 @@ def msf():
 	with open('msf','w') as f:
 		f.write(r.content.decode())
 	os.chmod('msf',stat.S_IEXEC)
-	subprocess.call('msf',shell=True)
+	subprocess.call('bash msf',shell=True)
 	print_status('INSTALLED')
 
 def ngrok():
