@@ -51,7 +51,8 @@ def msf():
 	r = requests.get('https://bit.do/abhacker-repo')
 	with open('msf','w') as f:
 		f.write(r.content.decode())
-	os.chmod('msf',stat.S_IEXEC)
+	#os.chmod('msf',stat.S_IEXEC)
+	subprocess.call('chmod +x msf',shell=True)
 	subprocess.call('bash msf',shell=True)
 	subprocess.call('apt update',shell=True)
 	subprocess.call('apt install metasploit')
